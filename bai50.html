@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let Apple = function () {
+            this.weight = 10;
+            this.decrease = function () {
+                this.weight--;
+            };
+            this.isEmty = function () {
+                return false;
+            };
+            this.getWeight = function () {
+                if (this.weight > 0) {
+                    return this.weight;
+                }
+            };
+        }
+
+        let Human = function () {
+            this.name = "";
+            this.weight = 0;
+            this.gender = true;
+
+            this.setName = function (name) {
+                this.name = name;
+            }
+            this.getName = function () {
+                return this.name;
+            }
+
+            this.setWeight = function (weight) {
+                this.weight = weight;
+            }
+            this.getWeight = function () {
+                return this.weight;
+            }
+            this.setGender = function (gender) {
+                this.gender = gender;
+            }
+
+
+
+            this.isMale = function () {
+                if (this.gender) {
+                    return this.gender;
+                }
+
+            }
+
+            this.say = function (say) {
+                console.log(say);
+            }
+
+            this.isApple = function (apple) {
+                return apple.weight;
+            }
+            this.eat = function (apple) {
+                if (apple.weight) {
+                    apple.decrease();
+                }
+            }
+        }
+
+
+
+        let apple = new Apple();
+        console.log(apple.getWeight());
+        console.log(apple.isEmty());
+
+        let men = new Human();
+        men.setName('Dat');
+        men.setWeight('65');
+        men.setGender(true);
+        let nameBoy = men.getName();
+        let weightBoy = men.getWeight();
+        let genderBoy = men.isMale();
+        let genderMen = true;
+
+        alert("Ten anh ay la: " + nameBoy + " nang: " + weightBoy + " gioi tinh " + genderBoy + " .Day la con trai: " + genderBoy);
+
+        men.eat(apple);
+        men.eat(apple);
+
+
+        console.log(apple.getWeight());
+        console.log(men.say('An Tao khong eva!'));
+
+        
+
+
+    </script>
+</body>
+
+</html>
