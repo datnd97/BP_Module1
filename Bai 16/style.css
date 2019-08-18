@@ -1,0 +1,49 @@
+body
+{
+    font-size: 2em;
+    margin: 0;
+    
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+  align-items: center;
+    font-family: sans-serif;
+}
+.check
+{
+    position: relative;
+}
+.check::before
+{
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 25px;
+    background-color: #ddd;
+    display: inline-block;
+    top: -11px;
+    left: -30px;
+    border-radius: 25px;
+  
+}
+.check::after
+{
+    content: '';
+    width: 25px;
+    height: 25px;
+    background-color:  #eee;
+    position: absolute;
+    top: -11px;
+    left: -30px;
+    border-radius: 25px;
+    transition:200ms;
+}
+.check:checked::after
+{
+    left: -5px;
+    background-color: #ddd;
+}
+.check:checked::before
+{
+    background-color: #8bc34a;
+}
