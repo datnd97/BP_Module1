@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let str1 = checkEmail('a@gmail.com');
+        let str2 = checkEmail('ab@gmail.com');
+        let str3 = checkEmail('@gmail.com');
+
+        console.log(str1);
+        console.log(str2);
+        console.log(str3);
+
+        function checkEmail(str) {
+            let regext = /^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)$/;
+            if (regext.test(str)) {
+                return true;
+            }
+            return false;
+
+        }
+
+    </script>
+</body>
+
+</html>
