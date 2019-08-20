@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="demo"></div>
+    <script>
+        /*
+        Làm việc với Date
+        Tính số thời gian mà bạn đã sống dưới nhiều đơn vị khác nhau.
+    
+        Bước 1: Tạo đối tượng Date() với thời gian truyền vào là ngày giờ sinh của bạn.
+    
+        Bước 2: Tạo đối tượng Date() với thời gian hiện tại.
+    
+        Bước 3: Hiển thị thời gian mà bạn đã sống dưới nhiều đơn vị khác nhau:
+    
+        Tôi đã sống 24 năm.
+    
+        Tôi đã sống 288 tháng.
+    
+        Tôi đã sống 8640 ngày.
+    
+        Tôi đã sống 307360 giờ.
+    
+        Tôi đã sống 12441600 phút.
+    
+        Tôi đã sống 746496000 giây.
+            
+        */
+        let a = new Date();
+       
+        let b = new Date(1995, 10, 28);
+    
+        let c = a - b;
+        
+        console.log('Tôi đã sống ' + Math.round(c / 1000 / 60 / 60 / 24 / 365) + ' năm' + '<br>');
+        console.log('Tôi đã sống ' + Math.round(c / 1000 / 60 / 60 / 24 / 365 * 12) + ' tháng' + '<br>');
+        console.log('Tôi đã sống ' + Math.round(c / 1000 / 60 / 60 / 24) + ' ngày' + '<br>');
+        console.log('Tôi đã sống ' + Math.round(c / 1000 / 60 / 60) + ' giờ' + '<br>');
+        console.log('Tôi đã sống ' + Math.round(c / 1000 / 60) + ' phút' + '<br>');
+        console.log('Tôi đã sống ' + (c / 1000 + ' giây'));
+
+
+
+        /*
+
+        Làm việc với Math:
+
+        */
+
+        /*Bước 1: Sinh số ngẫu nhiên*/
+        function getRandomInt2(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        console.log(getRandomInt2(0, 10)); /*Sinh số ngẫu nhiên từ 0-10*/
+        console.log(getRandomInt2(0, 400));// Sinh số ngẫu nhiên từ 0-400//
+        console.log(getRandomInt2(50, 100))// Sinh số ngẫu nhiên từ 50,100;
+        /*
+        Bước 2: Tìm giá trị nhỏ nhất
+        Tìm giá trị nhỏ nhất trong các số 5, 7, 2, 9 */
+        function getMinInt(number1, number2, number3, number4) {
+            return Math.min(number1, number2, number3, number4);
+        }
+
+        console.log(getMinInt(5, 7, 2, 9)); //Tìm giá trị nhỏ nhất trong các số 5, 7, 2, 9 //
+        function getMaxInt(number1, number2, number3, number4) {
+            return Math.max(number1, number2, number3, number4);
+        }
+        console.log(getMaxInt(5, 7, 8, 9));
+
+        // Bước 3: Tìm luỹ thừa 53:
+
+        function getPowNumber(coSo, soMu) {
+            return Math.pow(coSo, soMu);
+        }
+        console.log(getPowNumber(53, 2));  //luỹ thừa 53 co so 2.
+
+        //Bước 4: Tính diện tích của hình tròn có bán kính là 5cm:
+        let banKinh = 4;
+        let PI = 3.14;
+        function getCircle(r) {
+            return getPowNumber(r, 2) * PI;
+        }
+
+        console.log(getCircle(banKinh));
+
+
+        /*
+
+        Làm việc với đối tượng String
+
+        Bước 1: Cho sẵn chuỗi như sau: "Tôi yêu ngôn ngữ lập trình Javascript".
+        Hãy đếm số lần xuất hiện của chữ 'a' ở trong chuỗi trên.
+        */
+        let count = 0;
+        let str = "Tôi yêu ngôn ngữ lập trình Javascript";
+
+        function findChar(s) {
+
+            for (let i = 0; i < str.length; i++) {
+                if (str.charAt(i) == "a") {
+                    count++;
+                }
+
+
+            }
+            return count;
+        }
+        let find = findChar(str);
+        console.log("Cac chu a co trong mang la:" + find);
+        /*
+        Bước 2: Tách chuỗi
+        Hãy tách chuỗi trên vào trong một mảng các chuỗi. Mỗi từ là một phần từ.
+        */
+        let arr = [];
+        let n = str.split(" ");
+
+        function getArray(s) {
+            return s.split(" ");
+        }
+        arr = getArray(str);
+        console.log(arr); // mang moi.
+        //Bước 3: Đếm số lượng từ có trong chuỗi trên.
+        let soLuong = arr.length;
+        console.log("So luong tu co trong chuoi la:" + soLuong);
+        //Bước 4: Hãy thay thế chữ 'Javascript' bằng chữ 'Typescript':
+
+        //Bước 4: Hãy thay thế chữ 'Javascript' bằng chữ 'Typescript'
+        let thayThe = 'Typescript';
+        let res = str.replace("Javascript",thayThe);
+
+        console.log(res); // done.
+    </script>
+</body>
+
+</html>
