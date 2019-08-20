@@ -1,7 +1,7 @@
 const ON = true;
 const OFF = false;
 
-
+debugger;
 let SwitchButton = function () {
     this.status = OFF; // tat
     this.lamp; // den
@@ -18,6 +18,7 @@ let SwitchButton = function () {
         this.lamp.turnOff();
     }
     this.switchOn = function () {
+       
         this.lamp.turnOn();
     }
     this.getSwitchOn = function () {
