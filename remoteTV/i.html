@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let Remote = function (id) {
+            this.id = id;
+            this.number;
+            this.volume;
+            this.setSwtichTV = function (number) {
+                this.number = number;
+            }
+            this.getSwtichTV = function () {
+                return this.number;
+            }
+
+            this.upVolume = function (tivi) {
+                tivi.volume++;
+            }
+            this.downVolume = function (tivi) {
+                tivi.volume--;
+            }
+            this.turnOn = function (tivi) {
+                this.isOff = true;
+            }
+            this.turnOff = function (tivi) {
+                this.isOff = true;
+            }
+        }
+        let TiVi = function () {
+
+            this.status; // mo ta kenh hien thoi
+
+            this.isOff = false;
+            this.volume = 0;
+            this.setVolume = function (volume) {
+                this.volume = volume;
+            }
+            this.getVolume = function () {
+                return this.volume;
+            }
+            this.setStatus = function (status) {
+                this.status = status;
+            }
+            this.getStatus = function () {
+                return this.status;
+            }
+
+            this.statusChannel = function (status) {
+                this.setStatus(true);
+
+                if (this.getStatus()) {
+                    switch (status) {
+                        case 1:
+                            console.log("Kenh VTV1");
+                            break;
+                        case 2:
+                            console.log("Kenh VTV2");
+                            break;
+                        case 3:
+                            console.log("Kenh VTV3");
+                            break;
+                        case 7:
+                            console.log("Kenh Bong Da TV");
+                            break;
+
+                        default:
+                            console.log("chua duoc cap nhat.Mong ban thong cam");
+                            break;
+                    }
+                }
+                else
+                {
+                    console.log("Tivi dang tat");
+                }
+            }
+
+            this.moveChannels = function (remote) {
+                this.setStatus(true);
+
+                if (this.getStatus()) {
+                    console.log("Da chuyen den kenh: " + remote.getSwtichTV());
+                    this.setStatus(remote.getSwtichTV());
+                    let status = this.getStatus();
+                    this.statusChannel(status);
+
+                }
+                else {
+                    console.log("Tivi dang tat.");
+                }
+                // chuyen kenh
+            }
+
+            this.volumeControl = function (click) {
+                switch (click) {
+                    case '+':
+                        this.volume++;
+                        break;
+                    case '-':
+                        this.volume--;
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+        }
+        let tivi = new TiVi();
+        let remote = new Remote();
+
+        remote.turnOn(tivi);
+        remote.setSwtichTV(1);
+        tivi.moveChannels(remote);
+        remote.setSwtichTV(3);
+        tivi.moveChannels(remote);
+        remote.upVolume(tivi);
+        remote.upVolume(tivi);
+        remote.upVolume(tivi);
+        remote.upVolume(tivi);
+        remote.downVolume(tivi);
+        remote.upVolume(tivi);
+        remote.upVolume(tivi);
+        remote.upVolume(tivi);
+        remote.upVolume(tivi);
+        remote.upVolume(tivi);
+        tivi.volumeControl("+");
+        tivi.volumeControl("+");
+        remote.setSwtichTV(6);
+        tivi.moveChannels(remote);
+        console.log("Volume hien tai la:" + tivi.getVolume());
+    </script>
+</body>
+
+</html>
