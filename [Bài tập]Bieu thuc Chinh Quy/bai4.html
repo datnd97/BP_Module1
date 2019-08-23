@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+    <!-- Bài 4: Kiểm tra mã số bảo mật hợp lệ
+
+ -->
+ 
+</div>
+<script>
+    let value = "Dat0942125547"
+    let strongRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
+    let mediumRegex = /^^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})/
+
+    function textString(value)
+    {
+        if(strongRegex.test(value))
+        {
+            console.log("Strong Password");
+            
+        }
+        else if(mediumRegex.test(value))
+        {
+            console.log("Medium Password");
+        }
+        else
+        {
+            console.log("False");
+        }
+
+    }
+    let m = textString(value);
+    console.log(m);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // Bài 3: Đếm số nguyên âm/phụ âm trong một chuỗi
+        let str = "Hello World";
+
+        function checkNguyenAm(str) {
+            var m = str.match(/[aeiou]/gi);
+            return m === null ? 0 : m.length;
+        }
+        function checkPhuAm(str)
+        {
+            var m = str.match(/[^aeiou]/gi);
+            return m === null ? 0 : m.length;
+        }
+        
+        let vowels = checkNguyenAm(str);
+        let consonants = checkPhuAm(str);
+
+        console.log("Số lượng nguyên âm là:"+vowels);
+        console.log("Số lượng nguyên âm là:"+consonants);
+        
+        
+
+
+
+
+
+    </script>
+</body>
+
+</html>

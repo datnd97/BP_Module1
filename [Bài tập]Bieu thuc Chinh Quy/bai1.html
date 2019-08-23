@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Bài 1: Kiểm tra chuỗi đưa vào có đúng dạng dd/mm/yyyy
+
+
+        let str1 = "12/12/2001";
+        let str2 = "22222222";
+        
+        console.log(checkDate(str1));
+        console.log(checkDate(str2));
+
+
+        function checkDate(str)
+        {
+            let regex = /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/;
+            console.log(regex.test(str));
+        }
+    
+    
+    </script>
+</body>
+</html>
