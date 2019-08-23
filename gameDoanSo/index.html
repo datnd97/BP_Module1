@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script !src="">
+<!--    Bước 1: Tạo dang sách (mảng) các phần tử -->
+
+
+    function isTuyenTinh(arr,number) {
+        let check = false;
+        for(let i = 0 ; i < arr.length;i++)
+        {
+            if(arr[i] == value)
+            {
+                check = true;
+            }
+        }
+        return check;
+    }
+    function isNhiPhan(arr,value,mid)
+    {
+        if(arr[mid] == value)
+        {
+            return true;
+        }
+       for(let  i = mid ;mid>=0;i--)
+       {
+           if(arr[i] == value)
+           {
+               return  true;
+           }
+
+       }
+       for(let i = mid ; mid < arr.length ;i++)
+       {
+           if(arr[i] == value)
+           {
+               return  true;
+           }
+       }
+       return  false;
+    }
+    let arr = [];
+    for(let i = 0 ; i <= 100 ;i++)
+    {
+        arr.push(i);
+    }
+    let answer = arr[Math.floor(Math.random()*arr.length)];
+    console.log(answer);
+    let input = 0;
+    let center = Math.floor(arr.length/2);
+    while(input != answer)
+    {
+        input = parseFloat(prompt("Guess a number:"));
+        if(input == answer)
+        {
+            alert("Correct");
+        }
+        else if(input > answer)
+        {
+            alert("Too high");
+        }
+        else
+        {
+            alert("Too lower")
+        }
+    }
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        let Phone = ["0942125547","0962332122","0934567898"];
+        let phone1 = "01234567819";
+        let phone2 =  "0123456000";
+        // function checkSoluong(str) {
+        //     var check = /^\d{11}$/;
+        //     if(check.test(str))
+        //     {
+        //         console.log("dung roi");
+        //     }
+        //     else
+        //     {
+        //         console.log("sai");
+        //     }
+        // }
+        function checkViettelPhone(str)
+        {
+            var check = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+        }
+        let checkPhone1 = checkViettelNumber1(phone1);
+        let checkPhone2 = checkViettelNumber1(phone2);
+        console.log(checkPhone1);
+        console.log(checkPhone2);
+    </script>
+</body>
+</html>
